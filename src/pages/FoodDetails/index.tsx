@@ -141,7 +141,9 @@ const FoodDetails: React.FC = () => {
 
       setIsFavorite(false);
     } else {
-      await api.post('/favorites', food);
+      const favoriteFood = { ...food };
+      delete favoriteFood.id;
+      await api.post('/favorites', favoriteFood);
 
       setIsFavorite(true);
     }
