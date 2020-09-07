@@ -136,18 +136,18 @@ const FoodDetails: React.FC = () => {
 
   const toggleFavorite = useCallback(async () => {
     // Toggle if food is favorite or not
-    // if (isFavorite) {
-    //   await api.delete(`/favorites/${food.id}`);
+    if (isFavorite) {
+      await api.delete(`/favorites/${food.id}`);
 
-    //   setIsFavorite(false);
-    // } else {
-    //   await api.post('/favorites', food);
+      setIsFavorite(false);
+    } else {
+      await api.post('/favorites', food);
 
-    //   setIsFavorite(true);
-    // }
+      setIsFavorite(true);
+    }
 
-    setIsFavorite(!isFavorite);
-  }, [isFavorite]);
+    // setIsFavorite(!isFavorite);
+  }, [isFavorite, food]);
 
   const cartTotal = useMemo(() => {
     // Calculate cartTotal
@@ -170,9 +170,9 @@ const FoodDetails: React.FC = () => {
       price: cartTotal,
     };
     try {
-      const response = await api.post('/orders', data);
+      await api.post('/orders', data);
 
-      console.log('new order...', response.data);
+      // console.log('new order...', response.data);
 
       // navigation.navigate('');
     } catch (error) {
