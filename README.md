@@ -9,8 +9,9 @@ Node.js and a package manager like npm or yarn.
 ### Installing
 
 Run `npm install` or `yarn` to install all the dependencies.
-Run `npm start` or `yarn start` to run the frontent.
-Run `npm run server` or `yarn run server` to run the fake backend (add '-H your_IP_address' to the command as well as in services/api file instead of using localhost).
+Run `npm start` or `yarn start` to start the frontent.
+Run `npm run android` or `yarn android` to run the app on android devices.
+Run `npm run server` or `yarn server` to run the fake backend (add '-H your_IP_address' to the command as well as in services/api file instead of using localhost).
 
 ## Running the tests
 
